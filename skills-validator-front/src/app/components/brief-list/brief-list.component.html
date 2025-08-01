@@ -1,0 +1,47 @@
+<div class="page-container">
+  <!-- Header Section -->
+  <div class="header-container">
+    <h1 class="page-title">Briefs</h1>
+    <button class="new-brief-button">New Brief</button>
+  </div>
+
+  <!-- Search Section -->
+  <div class="search-container">
+    <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+    </svg>
+    <input type="text" placeholder="Search briefs..." class="search-input">
+  </div>
+
+
+<div class="briefs-container">
+  <div class="briefs-header">
+    <div class="brief-header-cell">Title</div>
+    <div class="brief-header-cell">Description</div>
+    <div class="brief-header-cell">Tools</div>
+    <div class="brief-header-cell">Deliverable</div>
+    <div class="brief-header-cell">Skills</div>
+  </div>
+
+  <div class="briefs-body">
+    <div class="brief-row" *ngFor="let brief of briefs">
+      <div class="brief-cell brief-title-cell">
+        {{ brief.titre }}
+      </div>
+      <div class="brief-cell brief-context-cell">
+        {{ brief.contexte }}
+      </div>
+      <div class="brief-cell brief-tools-cell">
+        {{ brief.outils }}
+      </div>
+      <div class="brief-cell brief-deliverable-cell">
+        {{ brief.livrable }}
+      </div>
+      <div class="brief-cell brief-skills-cell">
+        {{ brief.competenceIds?.join(', ') }}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

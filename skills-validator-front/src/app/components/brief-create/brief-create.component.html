@@ -1,0 +1,33 @@
+<div class="form-container">
+  <h2 class="form-title">Add New Brief</h2>
+  <form class="brief-form" (ngSubmit)="createBrief()">
+    <div class="form-group">
+      <label for="titre">Brief Title</label>
+      <input id="titre" [(ngModel)]="newBrief.titre" name="titre" placeholder="Enter brief title" required />
+    </div>
+
+    <div class="form-group">
+      <label for="contexte">Brief Description</label>
+      <textarea id="contexte" [(ngModel)]="newBrief.contexte" name="contexte" placeholder="Enter brief description" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="outils">Tools</label>
+      <input id="outils" [(ngModel)]="newBrief.outils" name="outils" placeholder="Enter tools used" required />
+    </div>
+
+    <div class="form-group">
+      <label for="livrable">Deliverable</label>
+      <input id="livrable" [(ngModel)]="newBrief.livrable" name="livrable" placeholder="Enter deliverables" required />
+    </div>
+
+    <div class="form-group">
+      <label for="competences">Associated Skills</label>
+      <input id="competences" [(ngModel)]="competenceInput" name="competenceInput" placeholder="separate by commas" required />
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="submit-button">Submit Brief</button>
+    </div>
+  </form>
+</div>

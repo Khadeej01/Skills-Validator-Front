@@ -1,0 +1,90 @@
+/* Overall form container */
+.form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Form title styling */
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2.5rem;
+}
+
+/* Individual form group for each field */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Styling for labels */
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Styling for text inputs and textarea */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #555;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Textarea specific styling */
+.form-group textarea {
+  min-height: 120px; /* Make it look like the image */
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Focus state for inputs and textarea */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #8ab4f8; /* Light blue border on focus */
+  box-shadow: 0 0 0 2px rgba(138, 180, 248, 0.2);
+}
+
+/* Placeholder styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #b0b0b0;
+}
+
+/* Container for the submit button */
+.form-actions {
+  display: flex;
+  justify-content: flex-end; /* Align the button to the right */
+  margin-top: 3rem;
+}
+
+/* Submit button styling */
+.submit-button {
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #357ae8; /* Darken the color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
