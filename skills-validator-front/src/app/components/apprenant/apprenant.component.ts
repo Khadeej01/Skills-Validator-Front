@@ -80,7 +80,7 @@ export class ApprenantComponent implements OnInit {
         this.apprenantService.inscrire(apprenantData).subscribe({
           next: (data) => {
             this.apprenants.push(data);
-      
+            this.resetForm();
           },
           error: (error) => {
             console.error('Erreur lors de l\'inscription:', error);
@@ -93,7 +93,7 @@ export class ApprenantComponent implements OnInit {
             if (index !== -1) {
               this.apprenants[index] = data;
             }
-         
+            this.resetForm();
           },
           error: (error) => {
             console.error('Erreur lors de la mise à jour:', error);
@@ -114,5 +114,28 @@ export class ApprenantComponent implements OnInit {
         }
       });
     }
+  }
+
+  viewRendus(apprenantId: number): void {
+    this.apprenantService.getRendusByApprenant(apprenantId).subscribe({
+      next: (data) => {
+        this.rendus = data;
+        this.showRendus = true;
+      },
+      error: (error) => {
+        console.error('Erreur lors du chargement des rendus:', error);
+      }
+    });
+  }
+
+  resetForm(): void {
+    this.isAdding = false;
+    this.isEditing = false;
+    this.selectedApprenant = null;
+    this.apprenantForm.reset();
+  }
+
+  cancel(): void {
+    this.resetForm();
   }
 } 
