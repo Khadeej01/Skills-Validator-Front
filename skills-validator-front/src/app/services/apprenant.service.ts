@@ -35,4 +35,14 @@ export class ApprenantService {
   deleteApprenant(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+  // Déposer un rendu pour un apprenant
+  deposerRendu(apprenantId: number, rendu: RenduDto): Observable<RenduDto> {
+    return this.http.post<RenduDto>(`${this.apiUrl}/${apprenantId}/rendus`, rendu);
+  }
+
+  // Récupérer tous les rendus d'un apprenant
+  getRendusByApprenant(apprenantId: number): Observable<RenduDto[]> {
+    return this.http.get<RenduDto[]>(`${this.apiUrl}/${apprenantId}/rendus`);
+  }
 } 
